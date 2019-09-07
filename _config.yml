@@ -17,14 +17,14 @@ sass:
 
 # About/contact
 author:
-  name:              Zach Miller
-  url:               https://twitter.com/zaglamir
-  email:             zach@thisismetis.com
+  name:              Reem Almoqbil
+  url:               
+  email:             reem.almuqbil@gmail.com
 
 # Custom vars
 version:             2.0.0
 github:
-  repo:              https://github.com/zwmiller
+  repo:              https://github.com/reemalmuqbil
 
 # Gems
 gems:
