@@ -2,7 +2,7 @@
 layout: post
 title: MTA Turnstile Data Analysis
 ---
-![header]({{ site.url }}/images/header.png)
+![header]({{ site.url }}/images/header.jpeg)
 ### Introduction
 
 A client has approached us from WomenTechWomenYes organization asking for our help in data analytics to support some of their work strategies. Since they are having a gala at the beginning of summer, they wish to optimize the effectiveness of their street team work and get as much signatures from people at subway stations in New York city to attend the gala and cntribute to their cause. 
