@@ -17,19 +17,6 @@ The street teams shall be distributed on stations which are applicable to the fo
 * Stations with highest traffic record across NYC in May 2019.
 * Stations located near to tech companies. 
 
-
-Part in the post to tell the page how to title your post and how to render it.
-
-Below are some examples of loading images, making links, and doing other
-markdown-y things.
-
-
-[This is a link](http://thisismetis.com)
-
-![Image test]({{ site.url }}/images/AlanLeeShireGandalf.JPG)
-
-### Other things
-* Like
-* lists
-* and 
-* stuff
+### Methodology
+####1-	Data acquisition: 
+We acquired Four datasets representing each week of May 2019 from [MTA Turnstile data](http://web.mta.info/developers/turnstile.html)
