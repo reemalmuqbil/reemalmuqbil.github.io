@@ -12,6 +12,12 @@ This is what the original dataset looks like, and you can find an exact descript
 
 ![original]({{ site.url }}/images/original-ds.png)
 
+### Hypothesis 
+The street teams shall be distributed on stations which are applicable to the following conditions:
+* Stations with highest traffic record across NYC in May 2019.
+* Stations located near to tech companies. 
+
+
 Part in the post to tell the page how to title your post and how to render it.
 
 Below are some examples of loading images, making links, and doing other
