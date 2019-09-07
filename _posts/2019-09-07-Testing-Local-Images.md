@@ -23,11 +23,11 @@ This is what the original dataset looks like, and you can find an exact descript
 
 
 ##### 2.  Preprocessing
-* First, we concatenated the Four datasets into one, and combined the date and time columns into one column name (DATE_TIME) as shown in the Figure below at the first column:
-![DATE_TIME]({{ site.url }}/images/date_time.png)
-* Then, we deleted columns which were never needed anytime during data processing, which are:  C/A, LINENAME, DIVISION, DESC.
+* First, we concatenated the Four datasets into one, and combined the date and time columns into one column named (DATE_TIME) as shown in the Figure below on the first column.
+![DATE_TIME]({{ site.url }}/images/withmay.png)
+* Then, we deleted columns which were never needed anytime during data processing. Which are:  C/A, LINENAME, DIVISION, DESC.
 * We created a unique identifier for each turnstile per station (UNIT/SCP). This ID will help us in the coming steps to calculate the total traffic per station. 
-* We excluded all dataset records which are not in May. The below Figure shows the head of our dataset after excluding these dates, you can see and compare with the previous Figure where all of its record where on April.  
+* We excluded all dataset records which are not in May. The below Figure shows the head of our dataset after excluding these dates. You can see and compare with the previous Figure where the head of the dataset were all on April.  
 ![may-only]({{ site.url }}/images/may_only.png)
 * Given the following inputs:
    - Total traffic must be calculated per stations.
