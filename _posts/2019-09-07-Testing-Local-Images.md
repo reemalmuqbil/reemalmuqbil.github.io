@@ -18,5 +18,5 @@ The street teams shall be distributed on stations which are applicable to the fo
 * Stations located near to tech companies. 
 
 ### Methodology
-####1-	Data acquisition: 
+#### 1-Data acquisition: 
 We acquired Four datasets representing each week of May 2019 from [MTA Turnstile data](http://web.mta.info/developers/turnstile.html)
