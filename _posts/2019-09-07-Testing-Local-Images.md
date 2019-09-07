@@ -46,7 +46,7 @@ The Figure below is a graph of one of the top 20 stations representing the total
 
 ![graph-2]({{ site.url }}/images/Picture2.png)
 
-###Decision Making 
+### Decision Making 
 After completing the analysis and visualization, we recommend distributing the teams on the following stations at weekdays: 
 * 34 ST-PEEN STA
 * GRD CNTRL-42 ST
@@ -54,4 +54,5 @@ After completing the analysis and visualization, we recommend distributing the t
 * TIMES SQ-42 ST
 
 These stations as mentioned before were not chosen due to their highest traffic records only, but because they are also located near to tech companies in NYC. The Figure below highlights the chosen stations locations with purple pins and tech companies’ locations with black pins.
+
 ![map]({{ site.url }}/images/station_locations.png)
