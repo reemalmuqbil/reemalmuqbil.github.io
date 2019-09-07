@@ -14,14 +14,15 @@ The street teams shall be distributed on stations which are applicable to the fo
 * Stations located near to tech companies. 
 
 ### Methodology
-#### 1-  Data acquisition: 
-We acquired Four datasets representing each week of May 2019 from [MTA Turnstile data](http://web.mta.info/developers/turnstile.html)
+##### 1.  Data acquisition 
+We acquired Four datasets representing each week of May 2019 from [MTA Turnstile data](http://web.mta.info/developers/turnstile.html).
 This is what the original dataset looks like, and you can find an exact description for each field [here](http://web.mta.info/developers/resources/nyct/turnstile/ts_Field_Description.txt) 
 
 ![original]({{ site.url }}/images/original-ds.png)
 
 
-#### 2-  Preprocessing: 
+
+##### 2.  Preprocessing
 * First, we concatenated the Four datasets into one, and combined the date and time columns into one column name (DATE_TIME) as shown in the Figure below at the first column:
 ![DATE_TIME]({{ site.url }}/images/date_time.png)
 * Then, we deleted columns which were never needed anytime during data processing, which are:  C/A, LINENAME, DIVISION, DESC.
@@ -38,7 +39,7 @@ We concluded that the whole dataset must be sorted on this list of attributes (S
 
 * After calculating the total traffic per record, we observed the existence of unnormal values (outliers). We investigated the reason and found out that some turnstile devices were malfunctioning and producing tremendously huge values which are incorrect. To solve this problem, we came up with a classic detecting and handling outliers solution. The outlier detection was done by calculating the IQR, lower bound, and upper bound for each station. All TOTAL_TRAFFIC values which are less that the lower bound value or higher than the upper bound value will be considered outliers. Once an outlier is detected, it will be handled by replacing its value with the traffic median value of its station.
 
-#### 3-  Visualization
+##### 3. Visualization
 We grouped the dataset by stations and calculated the sum of its TOTAL_TRAFFIC column. Then we plotted a bar chart using Seaborn representing the top 20 crowded stations in NYC on May 2019. 
 ![graph-1]({{ site.url }}/images/Picture1.png)
 
