@@ -18,5 +18,22 @@ The street teams shall be distributed on stations which are applicable to the fo
 * Stations located near to tech companies. 
 
 ### Methodology
-#### 1-Data acquisition: 
+#### 1- Data acquisition: 
 We acquired Four datasets representing each week of May 2019 from [MTA Turnstile data](http://web.mta.info/developers/turnstile.html)
+
+#### 2- Preprocessing: 
+* First, we concatenated the Four datasets into one, and combined the date and time columns into one column name (DATE_TIME) as shown in the Figure below at the first column:
+![DATE_TIME]({{ site.url }}/images/date_time.png)
+* Then, we deleted columns which were never needed anytime during data processing, which are:  C/A, LINENAME, DIVISION, DESC.
+* We created a unique identifier for each turnstile per station (UNIT/SCP). This ID will help us in the coming steps to calculate the total traffic per station. 
+* We excluded all dataset records which are not on May. The below Figure shows the head of our dataset after excluding these dates, you can see and compare with the previous Figure where all of its record where on April.  
+![may-only]({{ site.url }}/images/may_only.png)
+* Given the following inputs:
+   - Total traffic must be calculated per stations.
+   - Each station has multiple turnstiles records.
+   - Each turnstile records must be in sequence and its DATE_TIME values must be in ascending order. This is because each turnstile record is cumulative to itself in time. 
+We concluded that the whole dataset must be sorted on this list of attributes (STATION, UNIT/SCP, DATE_TIME)
+* Now, the dataset is ready for calculating the actual entries and exits per record which is equal to the entries/exits values minus the entries/exits values in the previous record where station name and turnstile IDs are similar. And the TOTAL_TRAFFIC value equals to ENTRIES_DIFF plus EXITS_DIFF.
+![calc]({{ site.url }}/images/calculations.png)
+
+* After calculating the total traffic per record, we observed the existence of unnormal values (outliers). We investigated the reason and found out that some turnstile devices were malfunctioning and producing tremendously huge values which are incorrect. To solve this problem, we came up with a classic detecting and handling outliers solution. The outlier detection was done by calculating the IQR, lower bound, and upper bound for each station. All TOTAL_TRAFFIC values which are less that the lower bound value or higher than the upper bound value will be considered outliers. Once an outlier is detected, it will be handled by replacing its value with the traffic median value of its station.
