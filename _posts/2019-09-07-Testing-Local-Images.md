@@ -10,7 +10,7 @@ A client has approached us from WomenTechWomenYes organization asking for our he
 ### About MTA Turnstile Dataset
 This is what the original dataset looks like, and you can find an exact description for each field [here](http://web.mta.info/developers/resources/nyct/turnstile/ts_Field_Description.txt) 
 
-![Image test]({{ site.url }}/images/original-ds.png)
+![original]({{ site.url }}/images/original-ds.png)
 
 Part in the post to tell the page how to title your post and how to render it.
 
