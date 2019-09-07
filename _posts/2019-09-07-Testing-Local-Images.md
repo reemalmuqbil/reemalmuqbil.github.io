@@ -33,19 +33,24 @@ This is what the original dataset looks like, and you can find an exact descript
    - Total traffic must be calculated per stations.
    - Each station has multiple turnstiles records.
    - Each turnstile records must be in sequence and its DATE_TIME values must be in ascending order. This is because each turnstile record is cumulative to itself in time. 
+
 We concluded that the whole dataset must be sorted on this list of attributes (STATION, UNIT/SCP, DATE_TIME)
 * Now, the dataset is ready for calculating the actual entries and exits per record which is equal to the entries/exits values minus the entries/exits values in the previous record where station name and turnstile IDs are similar. And the TOTAL_TRAFFIC value equals to ENTRIES_DIFF plus EXITS_DIFF.
 ![calc]({{ site.url }}/images/calculations.png)
 
-* After calculating the total traffic per record, we observed the existence of unnormal values (outliers). We investigated the reason and found out that some turnstile devices were malfunctioning and producing tremendously huge values which are incorrect. To solve this problem, we came up with a classic detecting and handling outliers solution. The outlier detection was done by calculating the IQR, lower bound, and upper bound for each station. All TOTAL_TRAFFIC values which are less that the lower bound value or higher than the upper bound value will be considered outliers. Once an outlier is detected, it will be handled by replacing its value with the traffic median value of its station.
+* After calculating the total traffic per record, we observed the existence of unnormal values (outliers). We investigated the reason and found out that some turnstile devices were malfunctioning and producing tremendously huge values which are incorrect. To solve this problem, we came up with a classic detecting and handling outliers solution. The outlier detection was done by calculating the IQR, lower bound, and upper bound for each station. All TOTAL_TRAFFIC values which are less that the lower bound value or higher than the upper bound value will be considered outliers. Once an outlier is detected, it will be handled by replacing its value with the total traffic median value of its station.
 
 ##### 3. Visualization
 We grouped the dataset by stations and calculated the sum of its TOTAL_TRAFFIC column. Then we plotted a bar chart using Seaborn representing the top 20 crowded stations in NYC on May 2019. 
+
 ![graph-1]({{ site.url }}/images/Picture1.png)
+
 
 The Figure below is a graph of one of the top 20 stations representing the total traffic for each day in May 2019. We concluded from the graph that weekdays are the most crowded days unlike weekends. 
 
+
 ![graph-2]({{ site.url }}/images/Picture2.png)
+
 
 ### Decision Making 
 After completing the analysis and visualization, we recommend distributing the teams on the following stations at weekdays: 
