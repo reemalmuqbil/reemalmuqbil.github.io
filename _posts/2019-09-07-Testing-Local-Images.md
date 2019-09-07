@@ -10,7 +10,7 @@ A client has approached us from WomenTechWomenYes organization asking for our he
 
 ### Hypothesis 
 The street teams shall be distributed on stations which are applicable to the following conditions:
-* Stations with highest traffic record across NYC in May 2019.
+* Stations with highest traffic records across NYC in May 2019.
 * Stations located near to tech companies. 
 
 ### Methodology
@@ -26,7 +26,7 @@ This is what the original dataset looks like, and you can find an exact descript
 ![DATE_TIME]({{ site.url }}/images/date_time.png)
 * Then, we deleted columns which were never needed anytime during data processing, which are:  C/A, LINENAME, DIVISION, DESC.
 * We created a unique identifier for each turnstile per station (UNIT/SCP). This ID will help us in the coming steps to calculate the total traffic per station. 
-* We excluded all dataset records which are not on May. The below Figure shows the head of our dataset after excluding these dates, you can see and compare with the previous Figure where all of its record where on April.  
+* We excluded all dataset records which are not in May. The below Figure shows the head of our dataset after excluding these dates, you can see and compare with the previous Figure where all of its record where on April.  
 ![may-only]({{ site.url }}/images/may_only.png)
 * Given the following inputs:
    - Total traffic must be calculated per stations.
@@ -42,7 +42,7 @@ We concluded that the whole dataset must be sorted on this list of attributes (S
 We grouped the dataset by stations and calculated the sum of its TOTAL_TRAFFIC column. Then we plotted a bar chart using Seaborn representing the top 20 crowded stations in NYC on May 2019. 
 ![graph-1]({{ site.url }}/images/Picture1.png)
 
-The Figure below is a graph of one of the top 20 stations representing the total traffic for each day on May. We concluded from the graph that weekdays are the most crowded days unlike weekends. 
+The Figure below is a graph of one of the top 20 stations representing the total traffic for each day in May 2019. We concluded from the graph that weekdays are the most crowded days unlike weekends. 
 
 ![graph-2]({{ site.url }}/images/Picture2.png)
 
