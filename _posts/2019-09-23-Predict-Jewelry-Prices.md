@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Predictin Jewelry Prices using Linear 
+title: Predictin Jewelry Prices using Linear Regression
 ---
 
-{% include image.html file="image-name.jpg" description="This is an image." %}
+![header]({{ site.url }}/images/header.jpeg)
