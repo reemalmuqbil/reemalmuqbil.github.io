@@ -82,3 +82,9 @@ __Validation Score:__ 0.6321
 
  ![bl-summary]({{ site.url }}/images/project-02/ols_bl.png)
  *Figure 9- Baseline Model Summary*
+
+#### Results discussion 
+The training and validation scores show a good overfitting potential, most of the p-values are high, the skewness measure tells me that the shape is far from being normally distributed, and the residual plot is not showing a good random distribution. 
+
+## Experimentations
+From the baseline model results discussion and my conclusions at the end of the EDA phase, you could see the need and the possible potential of building a more optimized model. At this point, I started an iterative process of feature engineering, building a new version of Linear Regression model, and recording the training and validation score to compare the performance of the models and reach the most optimized one. 
