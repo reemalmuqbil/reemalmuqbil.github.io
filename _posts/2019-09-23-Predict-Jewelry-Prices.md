@@ -73,8 +73,7 @@ At first, I started by exploring the correlation and the nature of the relations
 * Carat CT
 * Diamond pcs
 #### Performance 
-__Training Score:__ 0.6759  
-
+__Training Score:__ 0.6759   
 __Validation Score:__ 0.6321
 
 ![res-plot]({{ site.url }}/images/project-02/res_bl.png)
