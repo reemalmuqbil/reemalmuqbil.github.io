@@ -143,3 +143,10 @@ At the beginning, I chose to detect and handle the outliers using IQR. However, 
 I also chose to apply log transformation on the target to reduce its skewness. Figure 16 shows a distribution plot of the target after applying log transformation on it.
 ![distplot-target-log]({{ site.url }}/images/project-02/target_dist_log.png)
  *Figure 16- Distribution Plot After Log Transformation on the Target*
+
+#### Performance 
+![scores-final]({{ site.url }}/images/project-02/final_model_scores_final.png)
+ *Figure 17- Optimized Model Scores*
+
+![resid-plot-final]({{ site.url }}/images/project-02/resid_log_2500.png)
+ *Figure 18- Residual and Q-Q plots For Baseline Model*
