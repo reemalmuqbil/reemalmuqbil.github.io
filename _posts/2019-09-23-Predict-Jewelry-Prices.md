@@ -30,7 +30,7 @@ This stage has come to prepare the data for analysis and modeling with the follo
 * __Remove non-numerical characters from price values:__
  If you look at how the price values are stored in the dataset at the price_before_cleaning column, you can see that it contains the currency value and the string “(Approx)”. These strings shouldn’t be fed into our Machine Learning algorithm during the learning stage. Therefore, in this step, I have stored only the cost itself into the dataset. The result of this step is reflected on the price column in the Figure 2.
 
- ![demo]({{ site.url }}/images/project-02/price_col_transformation.png)
+ ![price-column-cleaning]({{ site.url }}/images/project-02/price_col_transformation.png)
  *Figure 2- Price Column Cleaning*
 
  * __Convert non-numerical dimensions into numeric:__
@@ -41,3 +41,26 @@ This stage has come to prepare the data for analysis and modeling with the follo
 
  * __Detecting and handling outliers.__
 
+#### EDA
+At first, I started by exploring the correlation and the nature of the relationship between the features against the target, and features against other features using the heatmap graph. 
+
+![bl_heatmap]({{ site.url }}/images/project-02/heatmap_bl.png)
+ *Figure 3- Baseline Heatmap*
+
+![price-net]({{ site.url }}/images/project-02/price-net_weight.png)
+ *Figure 4- Scatter Plot Net Weight Against Price*
+
+![price-carat]({{ site.url }}/images/project-02/price-carat_CT.png)
+ *Figure 5- Scatter Plot Carat CT Against Price*
+
+![gross-net]({{ site.url }}/images/project-02/gross_wieght_net_wieght.png)
+ *Figure 6- Scatter Plot Net Weight Against Gross Weight*
+
+![price-dist]({{ site.url }}/images/project-02/target_dist_bl.png)
+ *Figure 7- Distribution Plot of the Target (Price)*
+
+ Looking at the heatmap, scatter plots, target distribution plot, and the box plot, I have reached the following conclusions: 
+ * Gross weight and net weight have a highly correlated linear relationship. Therefore, one of them must be eliminated (most likely the gross weight). See Figure 3 and 6.
+ * Net weight has a high correlation with the target. 
+ * Carat (CT) has a correlation with the target. 
+ * It is obvious that the target (price) has a positively skewed distribution. One way to solve this problem is by applying a log transformation on it to get it close to a normally distributed graph (See Figure 7). 
