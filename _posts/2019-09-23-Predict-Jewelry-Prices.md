@@ -125,3 +125,9 @@ The unique values number on this feature makes it easier to choose whether to ke
 ![d-cert-trans]({{ site.url }}/images/project-02/d_cert_values_count.png)
  *Figure 12- Diamond Certificate Transformation*
 
+#### Detecting and handling outliers
+At the beginning, I chose to detect and handle the outliers using IQR. However, after the EDA phase and bunch of modeling experiments, I noticed that the IQR technique is eliminating point that are classified as outliers only because the dataset size is not large enough. In fact, by comparing the performance of the model with detecting and handling outliers using IQR vs. manually, the model performed better under handling it manually. Table 1 and the Figures below shows a performance comparison between the two. From the Table we see that the model which used IQR for outliers detection and handling has a higher overfitting potential than the one that filtered the dataset by setting the upper limit of price values to be 2500 $. From the model summaries we can also see from the skewness measures that model B is closer to the normal distribution than modal A is.
+|       | Model A (IQR) | Model B (Optimized model) |
+|-------|--------|---------|
+| Training score| 0.7729 | 0.7874 |
+| Validation score | 0.7633 | 0.7820 |
