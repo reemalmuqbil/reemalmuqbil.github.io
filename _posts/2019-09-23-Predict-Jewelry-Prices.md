@@ -27,9 +27,12 @@ The approach I have followed throughout developing this solution is illustrated 
 
 #### Data cleaning
 This stage has come to prepare the data for analysis and modeling with the following steps.
-* Remove non-numerical characters from price values
+* __Remove non-numerical characters from price values:__
  If you look at how the price values are stored in the dataset at the price_before_cleaning column, you can see that it contains the currency value and the string “(Approx)”. These strings shouldn’t be fed into our Machine Learning algorithm during the learning stage. Therefore, in this step, I have stored only the cost itself into the dataset. The result of this step is reflected on the price column in the Figure 2.
 
  ![demo]({{ site.url }}/images/project-02/price_col_transformation.png)
  *Figure 2- Price Column Cleaning*
+
+ * __Convert non-numerical dimensions into numeric:__
+ Because the data was acquired via scraping a website, we have it in a textual format. This step transforms the columns datatypes into numerical datatype to feed the dataset into the linear regression in a suitable format. 
 
