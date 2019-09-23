@@ -149,4 +149,4 @@ I also chose to apply log transformation on the target to reduce its skewness. F
  *Figure 17- Optimized Model Scores*
 
 ![resid-plot-final]({{ site.url }}/images/project-02/resid_log_2500.png)
- *Figure 18- Residual and Q-Q plots For Baseline Model*
+ *Figure 18- Residual and Q-Q plots For Optimized Model*
