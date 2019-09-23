@@ -65,7 +65,7 @@ At first, I started by exploring the correlation and the nature of the relations
  * Carat (CT) has a correlation with the target. 
  * It is obvious that the target (price) has a positively skewed distribution. One way to solve this problem is by applying a log transformation on it to get it close to a normally distributed graph (See Figure 7). 
 
- ## 1- First Iteration (Baseline Model)
+ ## First Iteration (Baseline Model)
  The baseline model used the basic features (numerical ones) scraped from the website to train itself and build its predictive model. These features are: 
 * Item package quantity
 * Gross weight
@@ -74,7 +74,8 @@ At first, I started by exploring the correlation and the nature of the relations
 * Diamond pcs
 #### Performance 
 | Training Score | 0.6759 |
-| Validation Score | 0.6321|
+|----------------|--------|
+| Validation Score| 0.6321|
 
 ![res-plot]({{ site.url }}/images/project-02/res_bl.png)
  *Figure 8- Residual and Q-Q plots For Baseline Model*
