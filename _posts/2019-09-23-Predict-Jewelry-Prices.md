@@ -136,5 +136,10 @@ At the beginning, I chose to detect and handle the outliers using IQR. However, 
 ![model-A-summary]({{ site.url }}/images/project-02/ols_res_iqr.png)
  *Figure 14- Model A Summary*
 
- ![model-B-summary]({{ site.url }}/images/project-02/ols_res_2500.png)
+![model-B-summary]({{ site.url }}/images/project-02/ols_res_2500.png)
  *Figure 15- Model B Summary*
+
+#### Log transformation
+I also chose to apply log transformation on the target to reduce its skewness. Figure 16 shows a distribution plot of the target after applying log transformation on it.
+![distplot-target-log]({{ site.url }}/images/project-02/target_dist_log.png)
+ *Figure 16- Distribution Plot After Log Transformation on the Target*
