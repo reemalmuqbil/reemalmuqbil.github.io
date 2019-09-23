@@ -40,24 +40,27 @@ This stage has come to prepare the data for analysis and modeling with the follo
  handling the missing values procedure was applied on two dimensions: records-wise and features-wise. Columns which had the majority of its entries empty (e.g., ring_size column) were discarded. Nevertheless, rows which had the majority of its columns empty due to perhaps internet connection issues or scraping issues in general were also discarded from the dataset. 
 
  * __Detecting and handling outliers.__
+![init-cleaned-dataset]({{ site.url }}/images/project-02/init_cleaned_dataset.png)
+ *Figure 3- Dataset After Initial Cleaning*
+
 
 #### EDA
 At first, I started by exploring the correlation and the nature of the relationship between the features against the target, and features against other features using the heatmap graph. 
 
 ![bl_heatmap]({{ site.url }}/images/project-02/heatmap_bl.png)
- *Figure 3- Baseline Heatmap*
+ *Figure 4- Baseline Heatmap*
 
 ![price-net]({{ site.url }}/images/project-02/price-net_weight.png)
- *Figure 4- Scatter Plot Net Weight Against Price*
+ *Figure 5- Scatter Plot Net Weight Against Price*
 
 ![price-carat]({{ site.url }}/images/project-02/price_carat_CT.png)
- *Figure 5- Scatter Plot Carat CT Against Price*
+ *Figure 6- Scatter Plot Carat CT Against Price*
 
 ![gross-net]({{ site.url }}/images/project-02/gross_wieght_net_wieght.png)
- *Figure 6- Scatter Plot Net Weight Against Gross Weight*
+ *Figure 7- Scatter Plot Net Weight Against Gross Weight*
 
 ![price-dist]({{ site.url }}/images/project-02/target_dist_bl.png)
- *Figure 7- Distribution Plot of the Target (Price)*
+ *Figure 8- Distribution Plot of the Target (Price)*
 
  Looking at the heatmap, scatter plots, target distribution plot, and the box plot, I have reached the following conclusions: 
  * Gross weight and net weight have a highly correlated linear relationship. Therefore, one of them must be eliminated (most likely the gross weight). See Figure 3 and 6.
@@ -77,13 +80,28 @@ __Training Score:__ 0.6759
 __Validation Score:__ 0.6321
 
 ![res-plot]({{ site.url }}/images/project-02/res_bl.png)
- *Figure 8- Residual and Q-Q plots For Baseline Model*
+ *Figure 9- Residual and Q-Q plots For Baseline Model*
 
  ![bl-summary]({{ site.url }}/images/project-02/ols_bl.png)
- *Figure 9- Baseline Model Summary*
+ *Figure 10- Baseline Model Summary*
 
 #### Results discussion 
 The training and validation scores show a good overfitting potential, most of the p-values are high, the skewness measure tells me that the shape is far from being normally distributed, and the residual plot is not showing a good random distribution. 
 
 ## Experimentations
 From the baseline model results discussion and my conclusions at the end of the EDA phase, you could see the need and the possible potential of building a more optimized model. At this point, I started an iterative process of feature engineering, building a new version of Linear Regression model, and recording the training and validation score to compare the performance of the models and reach the most optimized one. 
+
+
+## Optimized model
+The final model used some of the numerical features and some of the categorical features after transforming them into dummy variables using one-hot encoding to fit it into a Linear Regression algorithm. The chosen features are: 
+* Brand_Malabar
+* Purity (KT)
+* Net weight
+* Carat CT
+* g_cert_750
+* IGI_cert
+
+#### Feature engineering
+If you look at the three chosen features above named Brand_Malabar, g_cert_750, IGI_cert, you would realize that they did not exist in the original dataset on Figure. So, where did they come from? 
+Each one of these features is a derived from categorical feature in the original dataset. In order to make use of categorical features in a Linear Regression model, we have to transform its unique values into dummy variables, but not necessarily all of them. To reach a decision regarding which values to keep and which to discard, I plotted a histogram for each feature that draws the count of its values. This technique helps me identify where the majority of data is clustering and use these values only as dummy variables and the rest would be discarded from the dimensions but represented using (others or neither).                                              
+
