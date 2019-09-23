@@ -36,3 +36,8 @@ This stage has come to prepare the data for analysis and modeling with the follo
  * __Convert non-numerical dimensions into numeric:__
  Because the data was acquired via scraping a website, we have it in a textual format. This step transforms the columns datatypes into numerical datatype to feed the dataset into the linear regression in a suitable format. 
 
+ * __Handle missing values:__
+ handling the missing values procedure was applied on two dimensions: records-wise and features-wise. Columns which had the majority of its entries empty (e.g., ring_size column) were discarded. Nevertheless, rows which had the majority of its columns empty due to perhaps internet connection issues or scraping issues in general were also discarded from the dataset. 
+
+ * __Detecting and handling outliers.__
+
