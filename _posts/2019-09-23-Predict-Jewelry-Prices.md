@@ -50,7 +50,7 @@ At first, I started by exploring the correlation and the nature of the relations
 ![price-net]({{ site.url }}/images/project-02/price-net_weight.png)
  *Figure 4- Scatter Plot Net Weight Against Price*
 
-![price-carat]({{ site.url }}/images/project-02/price-carat_CT.png)
+![price-carat]({{ site.url }}/images/project-02/price_carat_CT.png)
  *Figure 5- Scatter Plot Carat CT Against Price*
 
 ![gross-net]({{ site.url }}/images/project-02/gross_wieght_net_wieght.png)
@@ -64,3 +64,20 @@ At first, I started by exploring the correlation and the nature of the relations
  * Net weight has a high correlation with the target. 
  * Carat (CT) has a correlation with the target. 
  * It is obvious that the target (price) has a positively skewed distribution. One way to solve this problem is by applying a log transformation on it to get it close to a normally distributed graph (See Figure 7). 
+
+ ## 1- First Iteration (Baseline Model)
+ The baseline model used the basic features (numerical ones) scraped from the website to train itself and build its predictive model. These features are: 
+* Item package quantity
+* Gross weight
+* Net weight
+* Carat CT
+* Diamond pcs
+#### Performance 
+| Training Score | 0.6759 |
+| Validation Score | 0.6321|
+
+![res-plot]({{ site.url }}/images/project-02/res_bl.png)
+ *Figure 8- Residual and Q-Q plots For Baseline Model*
+
+ ![bl-summary]({{ site.url }}/images/project-02/ols_bl.png)
+ *Figure 9- Baseline Model Summary*
