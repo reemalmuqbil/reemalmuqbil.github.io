@@ -18,13 +18,13 @@ The street teams shall be distributed on stations which are applicable to the fo
 We acquired Four datasets representing each week of May 2019 from [MTA Turnstile data](http://web.mta.info/developers/turnstile.html).
 This is what the original dataset looks like, and you can find an exact description for each field [here](http://web.mta.info/developers/resources/nyct/turnstile/ts_Field_Description.txt) 
 
-![original]({{ site.url }}/images/original-ds.png)
+![original]({{ site.url }}/images/project-01/original-ds.png)
 
 
 
 ##### 2.  Preprocessing
 * First, we concatenated the Four datasets into one, and combined the date and time columns into one column named (DATE_TIME) as shown in the Figure below on the first column.
-![DATE_TIME]({{ site.url }}/images/withmay.png)
+![DATE_TIME]({{ site.url }}/images/project-01/withmay.png)
 * Then, we deleted columns which were never needed anytime during data processing. Which are:  C/A, LINENAME, DIVISION, DESC.
 * We created a unique identifier for each turnstile per station (UNIT/SCP). This ID will help us in the coming steps to calculate the total traffic per station. 
 * We excluded all dataset records which are not in May. The below Figure shows the head of our dataset after excluding these dates. You can see and compare with the previous Figure where the head of the dataset were all on April.  
@@ -43,13 +43,13 @@ We concluded that the whole dataset must be sorted on this list of attributes (S
 ##### 3. Visualization
 We grouped the dataset by stations and calculated the sum of its TOTAL_TRAFFIC column. Then we plotted a bar chart using SeaBorn representing the top 20 crowded stations in NYC on May 2019. 
 
-![graph-1]({{ site.url }}/images/Picture1.png)
+![graph-1]({{ site.url }}/images/project-01/Picture1.png)
 
 
 The Figure below is a graph of one of the top 20 stations representing the total traffic for each day in May 2019. We concluded from the graph that weekdays are the most crowded days unlike weekends. 
 
 
-![graph-2]({{ site.url }}/images/Picture2.png)
+![graph-2]({{ site.url }}/images/project-01/Picture2.png)
 
 
 ### Decision Making 
@@ -61,4 +61,4 @@ After completing the analysis and visualization, we recommend distributing the t
 
 These stations as mentioned before were not chosen due to their highest traffic records only, but because they are also located near to tech companies in NYC. The Figure below highlights the chosen stations locations with purple pins and tech companies locations with black pins.
 
-![map]({{ site.url }}/images/station_locations.png)
+![map]({{ site.url }}/images/project-01/station_locations.png)
