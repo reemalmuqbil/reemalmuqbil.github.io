@@ -103,5 +103,25 @@ The final model used some of the numerical features and some of the categorical 
 
 #### Feature engineering
 If you look at the three chosen features above named Brand_Malabar, g_cert_750, IGI_cert, you would realize that they did not exist in the original dataset on Figure. So, where did they come from? 
-Each one of these features is a derived from categorical feature in the original dataset. In order to make use of categorical features in a Linear Regression model, we have to transform its unique values into dummy variables, but not necessarily all of them. To reach a decision regarding which values to keep and which to discard, I plotted a histogram for each feature that draws the count of its values. This technique helps me identify where the majority of data is clustering and use these values only as dummy variables and the rest would be discarded from the dimensions but represented using (others or neither).                                              
+Each one of these features is a derived from categorical feature in the original dataset. In order to make use of categorical features in a Linear Regression model, we have to transform its unique values into dummy variables, but not necessarily all of them. To reach a decision regarding which values to keep and which to discard, I plotted a histogram for each feature that draws the count of its values. This technique helps me identify where the majority of data is clustering and use these values only as dummy variables and the rest would be discarded from the dimensions but represented using (others or neither).                                            
+* __Brand_Malabar__
+Brand is a categorical feature that represents the manufacturer of the jewelry piece. From visualizing the distribution of values at the brand dimension, I noticed that the majority of data are clustering on the Malabar and Mine brand bars. Therefore, only Malabar and Mine brands are kept as dimensions and any brand other than these two will reflect to neither.
+
+![brand-trans]({{ site.url }}/images/project-02/brand_trans.png)
+ *Figure 11- Brand Transformation*
+
+* __g_cert_750__ 
+g_cert is a categorical feature that represents the gold certificate type.  Looking at the histogram, it seemed to me it wouldn't be fair to keep one dummy variable only due to the following reasons:
+- The significantly high count belongs to items which has no certificate. Meaning it will eventually end up with the (neither) category whether it was a high or low count.
+- The frequency count is not clustering at a single certificate type as much as the previous features were heavily clustering on a single feature.
+Therefore, for this case, I decided to include all of the unique values as dummy variables.
+
+![g-cert-trans]({{ site.url }}/images/project-02/g_cert_values_count.png)
+ *Figure 12- Gold Certificate Transformation*
+
+* __IGI_cert__
+The unique values number on this feature makes it easier to choose whether to keep all values as dummy variables or not. Since it's binary, this limits our decision to the rule of thumb of dummy variables number. Which is { k-1 | k = len( d_cert.unique() ) }
+
+![d-cert-trans]({{ site.url }}/images/project-02/d_cert_values_count.png)
+ *Figure 12- Diamond Certificate Transformation*
 
