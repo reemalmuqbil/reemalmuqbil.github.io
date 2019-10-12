@@ -39,7 +39,7 @@ This will result in generating 10 new features for each instance which represent
 *Figure 4- Template For Class Two*
 
 ![feature-engineered-dataset]({{site.url}}/images/digits-recognition/new-dataset.png)
-*Figure 5- Template For Class Two*
+*Figure 5- Dataset After Dimensionality Reduction*
 
 
 
