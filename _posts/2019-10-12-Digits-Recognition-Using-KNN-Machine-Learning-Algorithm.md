@@ -23,12 +23,11 @@ And the barchart below represents the classes distribution for this dataset, thi
 ![target-dist]({{site.url}}/images/digits-recognition/target-distribution.png)
 *Figure 3- Barchart For The Target Distribution*
 
-### 2. Learning Phase
-#### A- Baseline 
+### 2. Baseline 
 The baseline model for this problem was built using K-Nearest Neighbors algorithm with all 784 features. The cross validation score for the baseline model is 0.97, which is great! However, if you are familiar with K-NN or have worked with it, you might be able to guess what's wrong with this model.. Exactly, time complexity. The big-O notation for K-NN is _dxn_, where d is the number of dimensions (features) and n is the number of instances. In my case, for several runs it took between 1h 10min to 4h 20min to build the model. Therefore, to enhance its performance I've worked on feature engineering the dataset to reduce its dimensions.
 
-### B- Experiments
-#### Feature Engineering 
+
+### 3. Feature Engineering 
 To reduce the number of dimensions, I did the following: 
 1. Take the features mean from every instance at each class. This will create a shape that is similar to all instances from that class which will act like templates for class labels (see Figure 4). 
 2. Project the test samples through the templates and calculate how much pixels made it through.
@@ -41,6 +40,10 @@ This will result in generating 10 new features for each instance which represent
 ![feature-engineered-dataset]({{site.url}}/images/digits-recognition/new-dataset.png)
 *Figure 5- Dataset After Dimensionality Reduction*
 
+### 4- Experiments
+After applying dimensionality reduction on the original dataset, I experimented the data with five different Machine learning algorithms. I explored the performance results of them all and summarized it in Table 1.
 
+![feature-engineered-dataset]({{site.url}}/images/digits-recognition/new-dataset.png)
+*Figure 5- Dataset After Dimensionality Reduction*
 
 
