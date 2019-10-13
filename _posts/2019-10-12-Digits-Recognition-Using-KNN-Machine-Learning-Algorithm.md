@@ -47,6 +47,21 @@ After applying dimensionality reduction on the original dataset, I experimented 
 ![feature-engineered-dataset]({{site.url}}/images/digits-recognition/results-sum.png)
 *Table 1- Performance Results Summary*
 
- 
+It seemed to me that K-NN had the best performance compared to other models in terms of accuracy, confusion matrix, AUC, and overfitting potential, and with an acceptable time complexity performance. Moreover, with the help of GridSearchCV I decided to set the number of neighbors to be equal to 14 because it was the value that resulted in the highest accuracy with minimum overfitting potential.
+
+#### K-NN Performance 
+While experimenting with different algorithms, I noticed something in common between most weak classifier. That is, they all misclassify certain digits like 3 and 5 with 8, a 5 with a 3, or vice versa. Which make sense because 3, 5, and 8 are similar to each others. However, the final results I got with K-NN showed a good performance in classifying 3, 5, and 8 correctly (see Figure 7-a).
+
+![cms]({{site.url}}/images/digits-recognition/cms.jpg)
+*Figure 7- Confusion Matrices For All Experimented Models*
+
+You can see from Figure 7 that K-NN has the brightest diagonal, which means it has the minimum number of misclassified instances. 
+
+Figure 8 plots the AUC for all 10 class labels using K-NN, which scored the highest minimum curve. 
+
+![cms]({{site.url}}/images/digits-recognition/AUC_knn14.png)
+*Figure 8- AUC Using K-NN*
+
+### 5-Testing 
 
 
