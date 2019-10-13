@@ -6,6 +6,7 @@ title: Digits Recognition Using KNN Machine Learning Algorithm
 ![header]({{ site.url}}/images/digits-recognition/digits.png)
 
 ## Introduction 
+Image recognition is one of the most interesting topics in Machine Learning. Solutions for image recognition problems is needed in different industries such as the gaming industry, security industry, social media platform, and visual search engines. Hand written digits recognition is one of the basic problems in image recognition field. This article is going to discuss a hand written digits recognition solution using 
 
 ## Methodology 
 
@@ -24,7 +25,7 @@ And the barchart below represents the classes distribution for this dataset, thi
 *Figure 3- Barchart For The Target Distribution*
 
 ### 2. Baseline 
-The baseline model for this problem was built using K-Nearest Neighbors algorithm with all 784 features. The cross validation score for the baseline model is 0.97, which is great! However, if you are familiar with K-NN or have worked with it, you might be able to guess what's wrong with this model.. Exactly, time complexity. The big-O notation for K-NN is <var>dxn</var>, where d is the number of dimensions (features) and n is the number of instances. In my case, for several runs it took between 1h 10min to 4h 20min to build the model. Therefore, to enhance its performance I've worked on feature engineering the dataset to reduce its dimensions.
+The baseline model for this problem was built using K-Nearest Neighbors algorithm with all 784 features. The cross validation score for the baseline model is 0.97, which is great! However, if you are familiar with K-NN or have worked with it, you might be able to guess what's wrong with this model.. Exactly, time complexity. The big-O notation for K-NN is __<var>(d x n)</var>__, where d is the number of dimensions (features) and n is the number of instances. In my case, for several runs it took between 1h 10min to 4h 20min to build the model. Therefore, to enhance its performance I've worked on feature engineering the dataset to reduce its dimensions.
 
 
 ### 3. Feature Engineering 
@@ -43,7 +44,9 @@ This will result in generating 10 new features for each instance which represent
 ### 4- Experiments
 After applying dimensionality reduction on the original dataset, I experimented the data with five different Machine learning algorithms. I explored the performance results of them all and summarized it in Table 1.
 
-![feature-engineered-dataset]({{site.url}}/images/digits-recognition/new-dataset.png)
-*Figure 5- Dataset After Dimensionality Reduction*
+![feature-engineered-dataset]({{site.url}}/images/digits-recognition/results-sum.png)
+*Table 1- Performance Results Summary*
+
+ 
 
 
