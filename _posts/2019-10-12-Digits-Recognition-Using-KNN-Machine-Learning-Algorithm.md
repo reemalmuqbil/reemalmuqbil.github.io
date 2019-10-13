@@ -63,5 +63,16 @@ Figure 8 plots the AUC for all 10 class labels using K-NN, which scored the high
 *Figure 8- AUC Using K-NN*
 
 ### 5-Testing 
+On testing, K-NN scored 0.8710 accuracy in total of 1min 48s to test 14,000 data points. Figure 9 to Figure 12 shows random samples chosen from the test set with the value predicted by the model. 
 
+![test-sample1]({{site.url}}/images/digits-recognition/test-sample1.png)
+*Figure 9- Test Sample 1*
 
+![test-sample2]({{site.url}}/images/digits-recognition/test-sample2.png)
+*Figure 10- Test Sample 2*
+
+![test-sample3]({{site.url}}/images/digits-recognition/test-sample3.png)
+*Figure 11- Test Sample 3*
+
+![test-sample4]({{site.url}}/images/digits-recognition/test-sample4.png)
+*Figure 12- Test Sample 4*
